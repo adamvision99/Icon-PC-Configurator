@@ -1,0 +1,90 @@
+﻿@model IconPC.Stock.ASPPL.Models.Motherboard
+@using IconPC.Stock.ASPPL.Models;
+
+@{
+    ViewBag.Title = "Создать";
+    var sockets = ViewBag.Sockets as IEnumerable<Socket>;
+    var chipsets = ViewBag.Chipsets as IEnumerable<Chipset>;
+    var ramtypes = ViewBag.RAMtypes as IEnumerable<RAMtype>;
+}
+
+<h2>Создать</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    <h4>Motherboard</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Socket, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.Socket.Name,
+           sockets.Select(x => new SelectListItem { Text = x.Name, Value = x.Id.ToString(), Selected = true }),
+           new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Socket, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Chipset, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.Chipset.Name,
+           chipsets.Select(x => new SelectListItem { Text = x.Name, Value = x.Id.ToString(), Selected = true }),
+           new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Chipset, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.RAMtype, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.RAMtype.Name,
+           ramtypes.Select(x => new SelectListItem { Text = x.Name, Value = x.Id.ToString(), Selected = true }),
+           new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.RAMtype, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.NumberOfDRAM, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.NumberOfDRAM, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.NumberOfDRAM, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Interfaces, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Interfaces, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Interfaces, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Вернуться к списку", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

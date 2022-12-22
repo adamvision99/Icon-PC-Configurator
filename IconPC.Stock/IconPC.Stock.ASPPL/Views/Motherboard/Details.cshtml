@@ -1,0 +1,66 @@
+﻿@model IconPC.Stock.ASPPL.Models.Motherboard
+
+@{
+    ViewBag.Title = "Детали";
+}
+
+<h2>Детали</h2>
+
+<div>
+    <h4>Motherboard</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Socket)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Socket.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Chipset)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Chipset.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RAMtype)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RAMtype.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumberOfDRAM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumberOfDRAM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Interfaces)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Interfaces)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Вернуться к списку", "Index")
+</p>

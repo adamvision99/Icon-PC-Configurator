@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - PC Config</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("PC Config", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+
+                    <li>@Html.ActionLink("Системный блок", "Index", "SystemUnit", null, new { @class = "dropdown-item" })</li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Каталог
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li>@Html.ActionLink("Процессоры", "Index", "CPU", null, new { @class = "dropdown-item" })</li>
+                            <li>@Html.ActionLink("Материнские платы", "Index", "Motherboard", null, new { @class = "dropdown-item" })</li>
+                            <li>@Html.ActionLink("ОЗУ", "Index", "RAM", null, new { @class = "dropdown-item" })</li>
+                            <li>@Html.ActionLink("Видеокарты", "Index", "VideoCard", null, new { @class = "dropdown-item" })</li>
+                            <li>@Html.ActionLink("Охлаждение", "Index", "Cooling", null, new { @class = "dropdown-item" })</li>
+                            <li>@Html.ActionLink("Накопители", "Index", "Drive", null, new { @class = "dropdown-item" })</li>
+                            <li>@Html.ActionLink("Блоки питания", "Index", "PowerUnit", null, new { @class = "dropdown-item" })</li>
+                            <li>@Html.ActionLink("Корпусы", "Index", "Case", null, new { @class = "dropdown-item" })</li>
+                        </ul>
+                    </li>   
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Дополнительные объекты
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li>@Html.ActionLink("Сокеты", "Index", "Socket", null, new { @class = "dropdown-item" })</li>
+                            <li>@Html.ActionLink("Чипсеты", "Index", "Chipset", null, new { @class = "dropdown-item" })</li>
+                            <li>@Html.ActionLink("Типы памяти", "Index", "RAMtype", null, new { @class = "dropdown-item" })</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Айкон Computers</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

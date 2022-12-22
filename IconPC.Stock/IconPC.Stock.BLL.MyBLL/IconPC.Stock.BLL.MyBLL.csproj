@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B2AB92CC-230A-468F-85AB-759B83B42A01}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IconPC.Stock.BLL.MyBLL</RootNamespace>
+    <AssemblyName>IconPC.Stock.BLL.MyBLL</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Block\PowerUnitService.cs" />
+    <Compile Include="Block\RAMService.cs" />
+    <Compile Include="Block\VideoCardService.cs" />
+    <Compile Include="SystemUnitService.cs" />
+    <Compile Include="Block\MotherboardService.cs" />
+    <Compile Include="Block\DriveService.cs" />
+    <Compile Include="Block\CPUService.cs" />
+    <Compile Include="Block\CoolingService.cs" />
+    <Compile Include="Block\CaseService.cs" />
+    <Compile Include="Block\Common\SocketService.cs" />
+    <Compile Include="Block\Common\RAMtypeService.cs" />
+    <Compile Include="Block\Common\ChipsetService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IconPC.Stock.BLL.Interfaces\IconPC.Stock.BLL.Interfaces.csproj">
+      <Project>{de17a6c3-784c-4c41-b29e-d9a9bde88a3c}</Project>
+      <Name>IconPC.Stock.BLL.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IconPC.Stock.DAL.Interfaces\IconPC.Stock.DAL.Interfaces.csproj">
+      <Project>{3c7e9a0e-c976-410a-a1ca-c9cf1a4256a0}</Project>
+      <Name>IconPC.Stock.DAL.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IconPC.Stock.Entities\IconPC.Stock.Entities.csproj">
+      <Project>{3cb49cfc-0b9b-4de3-9cdb-f0599f8850be}</Project>
+      <Name>IconPC.Stock.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

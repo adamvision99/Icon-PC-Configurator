@@ -1,0 +1,66 @@
+﻿@model IconPC.Stock.ASPPL.Models.Drive
+
+@{
+    ViewBag.Title = "Детали";
+}
+
+<h2>Детали</h2>
+
+<div>
+    <h4>Drive</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Capacity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Capacity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WriteSpeed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WriteSpeed)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReadSpeed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReadSpeed)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TBW)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TBW)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Вернуться к списку", "Index")
+</p>

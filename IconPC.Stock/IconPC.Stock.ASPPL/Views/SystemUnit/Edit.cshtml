@@ -1,0 +1,156 @@
+﻿@model IconPC.Stock.ASPPL.Models.SystemUnit
+@using IconPC.Stock.ASPPL.Models;
+
+@{
+    ViewBag.Title = "Изменить";
+    var cpus = ViewBag.CPU as IEnumerable<CPU>;
+    var motherboards = ViewBag.Motherboard as IEnumerable<Motherboard>;
+    var rams = ViewBag.RAM as IEnumerable<RAM>;
+    var videocards = ViewBag.VideoCard as IEnumerable<VideoCard>;
+    var coolings = ViewBag.Cooling as IEnumerable<Cooling>;
+    var drives = ViewBag.Drive as IEnumerable<Drive>;
+    var powerunits = ViewBag.PowerUnit as IEnumerable<PowerUnit>;
+    var cases = ViewBag.Case as IEnumerable<Case>;
+}
+
+<h2>Изменить</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <h4>SystemUnit</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.Id)
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Series, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Series, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Series, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.CPU, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.CPU.Name,
+           cpus.Select(x => new SelectListItem { Text = x.Name, Value = x.Id.ToString(), Selected = true }),
+           new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.CPU, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Motherboard, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.Motherboard.Name,
+           motherboards.Select(x => new SelectListItem { Text = x.Name, Value = x.Id.ToString(), Selected = true }),
+           new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Motherboard, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.RAM, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.RAM.Name,
+           rams.Select(x => new SelectListItem { Text = x.Name, Value = x.Id.ToString(), Selected = true }),
+           new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.RAM, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.VideoCard, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.VideoCard.Name,
+           videocards.Select(x => new SelectListItem { Text = x.Name, Value = x.Id.ToString(), Selected = true }),
+           new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.VideoCard, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Cooling, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.Cooling.Name,
+           coolings.Select(x => new SelectListItem { Text = x.Name, Value = x.Id.ToString(), Selected = true }),
+           new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Cooling, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Drive, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.Drive.Name,
+           drives.Select(x => new SelectListItem { Text = x.Name, Value = x.Id.ToString(), Selected = true }),
+           new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Drive, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.PowerUnit, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.PowerUnit.Name,
+           powerunits.Select(x => new SelectListItem { Text = x.Name, Value = x.Id.ToString(), Selected = true }),
+           new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.PowerUnit, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Case, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.Case.Name,
+           cases.Select(x => new SelectListItem { Text = x.Name, Value = x.Id.ToString(), Selected = true }),
+           new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Case, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Price, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Save" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Вернуться к списку", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

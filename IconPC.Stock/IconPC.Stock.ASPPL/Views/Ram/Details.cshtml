@@ -1,0 +1,58 @@
+﻿@model IconPC.Stock.ASPPL.Models.RAM
+
+@{
+    ViewBag.Title = "Детали";
+}
+
+<h2>Детали</h2>
+
+<div>
+    <h4>RAM</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Size)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Size)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumberOfModules)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumberOfModules)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MemoryFrequency)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MemoryFrequency)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Latency)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Latency)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Вернуться к списку", "Index")
+</p>

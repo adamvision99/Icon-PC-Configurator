@@ -1,0 +1,69 @@
+﻿@model IEnumerable<IconPC.Stock.ASPPL.Models.VideoCard>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Список</h2>
+
+<p>
+    @Html.ActionLink("Создать", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Desctription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MemorySize)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BusWidth)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MinimumPowerSupply)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Length)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Connector)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Desctription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MemorySize)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BusWidth)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MinimumPowerSupply)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Length)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Connector)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

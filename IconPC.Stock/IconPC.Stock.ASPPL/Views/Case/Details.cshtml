@@ -1,0 +1,74 @@
+﻿@model IconPC.Stock.ASPPL.Models.Case
+
+@{
+    ViewBag.Title = "Детали";
+}
+
+<h2>Детали</h2>
+
+<div>
+    <h4>Case</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaximumCoolerHeight)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaximumCoolerHeight)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaximumVideoCardLength)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaximumVideoCardLength)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WaterCoolingMount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WaterCoolingMount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Color)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Color)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FansNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FansNumber)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Вернуться к списку", "Index")
+</p>
